@@ -14,4 +14,10 @@ public class UserRegistrationTest {
         boolean check=userRegistration.checkFirstNameIsCorrect(firstName);
         assertTrue(check);
     }
+    @Test
+    public void lastName(){
+        String lastName = "Bolishetti";
+        boolean check = userRegistration.checkLastNameIsCorrect(lastName);
+        assertTrue(check);
+    }
 }
