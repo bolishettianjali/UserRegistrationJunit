@@ -10,6 +10,14 @@ public class UserRegistration {
             System.out.println("Please Enter a Valid First name");
         return check;
     }
+    public static boolean checkLastNameIsCorrect(String lastName ){
+        boolean check=Pattern.matches("^[A-Z]{1}+[a-z]{3,}+$",lastName);
+        if(check)
+            System.out.println("lastName is correct");
+        else
+            System.out.println("Please Enter a valid Lastname");
+        return check;
+    }
 
 }
 
