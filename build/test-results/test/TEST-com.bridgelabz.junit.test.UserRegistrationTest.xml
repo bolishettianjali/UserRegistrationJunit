@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.junit.test.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-26T07:15:57" hostname="LAPTOP-H1ORNGVH" time="0.018">
+  <properties/>
+  <testcase name="firstName()" classname="com.bridgelabz.junit.test.UserRegistrationTest" time="0.018"/>
+  <system-out><![CDATA[FirstName is correct
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
