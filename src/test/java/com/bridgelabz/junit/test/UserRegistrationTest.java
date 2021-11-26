@@ -50,4 +50,10 @@ public class UserRegistrationTest {
         boolean check = userRegistration.checkPassWordRule3IsCorrect(password3);
         assertTrue(check);
     }
+    @Test
+    public void passWordRule4(){
+        String passWord3 = "Anjalianjali1@";
+        boolean check = userRegistration.checkPassWordRule4IsCorrect(passWord3);
+        assertTrue(check);
+    }
 }
