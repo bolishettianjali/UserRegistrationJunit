@@ -20,4 +20,10 @@ public class UserRegistrationTest {
         boolean check = userRegistration.checkLastNameIsCorrect(lastName);
         assertTrue(check);
     }
+    @Test
+    public void eMail(){
+        String eMail = "anjali@gmail.com";
+        boolean check = userRegistration.checkEmailIsCorrect(eMail);
+        assertTrue(check);
+    }
 }

@@ -18,6 +18,14 @@ public class UserRegistration {
             System.out.println("Please Enter a valid Lastname");
         return check;
     }
+    public static boolean checkEmailIsCorrect(String eMail) {
+        boolean check = Pattern.matches("^[a-z]*([.]?[a-z]+)*@gmail[.]com([.]?in)*", eMail);
+        if (check)
+            System.out.println("Email is correct");
+        else
+            System.out.println("Please Enter a Valid Email");
+        return check;
+    }
 
 }
 
