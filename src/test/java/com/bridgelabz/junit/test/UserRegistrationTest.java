@@ -95,4 +95,11 @@ public class UserRegistrationTest {
         check = userRegistration.checkEmailIsCorrect(eMail1);
         assertTrue(check);
     }
+    @Test
+    public void emailUniversal(){
+        String email = "Anjali1@gmail.com";
+        boolean check = UserRegistration.emailUniversal(email);
+        assertTrue(check);
+        System.out.println("...............................................................");
+    }
 }
