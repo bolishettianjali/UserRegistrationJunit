@@ -26,6 +26,14 @@ public class UserRegistration {
             System.out.println("Please Enter a Valid Email");
         return check;
     }
+    public static boolean checkMobileNumberFormatIsCorrect(String mobileNumber) {
+        boolean check = Pattern.matches("^91\\s[6789][0-9]{9}", mobileNumber);
+        if (check)
+            System.out.println("Mobile Number format is correct");
+        else
+            System.out.println("Please Enter a Valid Mobile Num\nMobile number format should be 91 9533182605");
+        return check;
+    }
 
 }
 
