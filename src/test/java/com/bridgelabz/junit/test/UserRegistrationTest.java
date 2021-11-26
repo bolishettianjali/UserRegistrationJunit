@@ -56,4 +56,43 @@ public class UserRegistrationTest {
         boolean check = userRegistration.checkPassWordRule4IsCorrect(passWord3);
         assertTrue(check);
     }
+    @Test
+    public void HappyAndSadCasesForFirstName(){
+        String firstName = "Anjali";
+        String firstName1 = "anjali";
+        boolean check = userRegistration.checkFirstNameIsCorrect(firstName);
+        assertTrue(check);
+        check = userRegistration.checkFirstNameIsCorrect(firstName1);
+        assertTrue(check);
+    }
+
+    @Test
+    public void HappyAndSadCasesForLasstName(){
+        String lastName = "Bolishett";
+        String lastName1 = "b";
+        boolean check = userRegistration.checkLastNameIsCorrect(lastName);
+        assertTrue(check);
+        check = userRegistration.checkLastNameIsCorrect(lastName1);
+        assertTrue(check);
+    }
+
+    @Test
+    public void HappyAndSadCasesForMobileFormat(){
+        String mobileNumber = "91 9491328183";
+        String mobileNumber1 = "9491328183";
+        boolean check = userRegistration.checkMobileNumberFormatIsCorrect(mobileNumber);
+        assertTrue(check);
+        check = userRegistration.checkMobileNumberFormatIsCorrect(mobileNumber1);
+        assertTrue(check);
+    }
+
+    @Test
+    public void HappyAndSadCasesForEmail() {
+        String eMail = "anjali@gmail.com";
+        String eMail1 = "anjali@.com";
+        boolean check = userRegistration.checkEmailIsCorrect(eMail);
+        assertTrue(check);
+        check = userRegistration.checkEmailIsCorrect(eMail1);
+        assertTrue(check);
+    }
 }
