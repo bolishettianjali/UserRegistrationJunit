@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.junit.test.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-26T08:26:51" hostname="LAPTOP-H1ORNGVH" time="0.018">
+<testsuite name="com.bridgelabz.junit.test.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-26T08:29:39" hostname="LAPTOP-H1ORNGVH" time="0.02">
   <properties/>
-  <testcase name="mobileNumber()" classname="com.bridgelabz.junit.test.UserRegistrationTest" time="0.018"/>
+  <testcase name="mobileNumber()" classname="com.bridgelabz.junit.test.UserRegistrationTest" time="0.02"/>
   <system-out><![CDATA[Mobile Number format is correct
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

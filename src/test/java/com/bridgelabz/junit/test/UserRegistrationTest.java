@@ -32,4 +32,10 @@ public class UserRegistrationTest {
         boolean check=userRegistration.checkMobileNumberFormatIsCorrect(mobileNumber);
         assertTrue(check);
     }
+    @Test
+    public void passWordRule1(){
+        String password="Anjalianjali";
+        boolean check=userRegistration.checkPassWordRule1IsCorrect(password);
+        assertTrue(check);
+    }
 }
