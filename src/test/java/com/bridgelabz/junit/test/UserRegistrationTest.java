@@ -1,105 +1,77 @@
 package com.bridgelabz.junit.test;
 
 import com.bl.junit.UserRegistration;
+import com.bl.junit.UserRegistrationException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 
 public class UserRegistrationTest {
-    UserRegistration userRegistration=new UserRegistration();
-    @Test
-    public void firstName(){
-        String firstName="Anjali";
-        boolean check=userRegistration.checkFirstNameIsCorrect(firstName);
-        assertTrue(check);
-    }
-    @Test
-    public void lastName(){
-        String lastName = "Bolishetti";
-        boolean check = userRegistration.checkLastNameIsCorrect(lastName);
-        assertTrue(check);
-    }
-    @Test
-    public void eMail(){
-        String eMail = "anjali@gmail.com";
-        boolean check = userRegistration.checkEmailIsCorrect(eMail);
-        assertTrue(check);
-    }
-    @Test
-    public void mobileNumber(){
-        String mobileNumber="91 9491328183";
-        boolean check=userRegistration.checkMobileNumberFormatIsCorrect(mobileNumber);
-        assertTrue(check);
-    }
-    @Test
-    public void passWordRule1(){
-        String password="Anjalianjali";
-        boolean check=userRegistration.checkPassWordRule1IsCorrect(password);
-        assertTrue(check);
-    }
-    @Test
-    public void passWordRule2(){
-        String password2 = "Anjalianjali";
-        boolean check = userRegistration.checkPassWordRule2IsCorrect(password2);
-        assertTrue(check);
-    }
-    @Test
-    public void passWordRule3(){
-        String password3 = "Anjalianjali1";
-        boolean check = userRegistration.checkPassWordRule3IsCorrect(password3);
-        assertTrue(check);
-    }
-    @Test
-    public void passWordRule4(){
-        String passWord3 = "Anjalianjali1@";
-        boolean check = userRegistration.checkPassWordRule4IsCorrect(passWord3);
-        assertTrue(check);
-    }
-    @Test
-    public void HappyAndSadCasesForFirstName(){
-        String firstName = "Anjali";
-        String firstName1 = "anjali";
-        boolean check = userRegistration.checkFirstNameIsCorrect(firstName);
-        assertTrue(check);
-        check = userRegistration.checkFirstNameIsCorrect(firstName1);
-        assertTrue(check);
-    }
+    UserRegistration userRegistration = new UserRegistration();
+
+
+
 
     @Test
-    public void HappyAndSadCasesForLasstName(){
-        String lastName = "Bolishett";
-        String lastName1 = "b";
-        boolean check = userRegistration.checkLastNameIsCorrect(lastName);
-        assertTrue(check);
-        check = userRegistration.checkLastNameIsCorrect(lastName1);
-        assertTrue(check);
-    }
-
-    @Test
-    public void HappyAndSadCasesForMobileFormat(){
-        String mobileNumber = "91 9491328183";
-        String mobileNumber1 = "9491328183";
-        boolean check = userRegistration.checkMobileNumberFormatIsCorrect(mobileNumber);
-        assertTrue(check);
-        check = userRegistration.checkMobileNumberFormatIsCorrect(mobileNumber1);
-        assertTrue(check);
-    }
-
-    @Test
-    public void HappyAndSadCasesForEmail() {
-        String eMail = "anjali@gmail.com";
-        String eMail1 = "anjali@.com";
-        boolean check = userRegistration.checkEmailIsCorrect(eMail);
-        assertTrue(check);
-        check = userRegistration.checkEmailIsCorrect(eMail1);
-        assertTrue(check);
+    public void checkGivenFirstNameIsValidAndShouldReturnHappy() throws UserRegistrationException {
+        String checkMood = "HAPPY";
+        String ActualMood = userRegistration.FirstName("Anjali");
+        Assertions.assertEquals(checkMood, ActualMood);
     }
     @Test
-    public void emailUniversal(){
-        String email = "Anjali1@gmail.com";
-        boolean check = UserRegistration.emailUniversal(email);
-        assertTrue(check);
-        System.out.println("...............................................................");
+    public void checkGivenFirstNameIsInValidAndShouldReturnSad() throws UserRegistrationException {
+        String checkMood = "SAD";
+        String ActualMood = userRegistration.FirstName("Teja");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenLastNameIsValidAndShouldReturnHappy() throws UserRegistrationException {
+        String checkMood = "HAPPY";
+        String ActualMood = userRegistration.LastName("B");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenLastNameIsInValidAndShouldReturnSad() throws UserRegistrationException {
+        String checkMood = "SAD";
+        String ActualMood = userRegistration.LastName("P");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenMobileNumberIsValidAndShouldReturnHappy() throws UserRegistrationException {
+        String checkMood = "HAPPY";
+        String ActualMood = userRegistration.MobileNumber("91 9491328345");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenMobileNumberIsInValidAndShouldReturnSad() throws UserRegistrationException {
+        String checkMood = "SAD";
+        String ActualMood = userRegistration.MobileNumber("912339488564");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenEmailIsValidAndShouldReturnHappy() throws UserRegistrationException {
+        String checkMood = "HAPPY";
+        String ActualMood = userRegistration.Email("anjali@bl.co");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenEmailIsInValidAndShouldReturnSad() throws UserRegistrationException {
+        String checkMood = "SAD";
+        String ActualMood = userRegistration.Email("teja@gmail.co");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenPasswordIsValidAndShouldReturnHappy() throws UserRegistrationException {
+        String checkMood = "HAPPY";
+        String ActualMood = userRegistration.PassWord("Anjalianjali");
+        Assertions.assertEquals(checkMood, ActualMood);
+    }
+    @Test
+    public void checkGivenPasswordIsInValidAndShouldReturnSad() throws UserRegistrationException {
+        String checkMood = "SAD";
+        String ActualMood = userRegistration.PassWord("anjali");
+        Assertions.assertEquals(checkMood, ActualMood);
     }
 }
